@@ -19,16 +19,16 @@ public class Car {
     private Long id;
     private String model;
     private String basePrice;
-    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Feature> features;
-    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<ExteriorColor> exteriorColors;
-    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<InteriorOption> interiorOptions;
-    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy="car",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<AutopilotOption> autopilotOptions;
     private String imageLink;

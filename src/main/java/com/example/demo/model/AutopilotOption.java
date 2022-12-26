@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
 @Table(name = "AUTOPILOT_OPTIONS")
-public class AutopilotOption {
+public class AutopilotOption extends Option {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "autopilot_options_seq")
     @SequenceGenerator(name = "autopilot_options_seq", sequenceName = "autopilot_options_seq", allocationSize = 1)
@@ -17,7 +19,7 @@ public class AutopilotOption {
     private String price;
     @ManyToOne
     @JsonBackReference
-    @JoinColumn(name="car_id", referencedColumnName="id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Car car;
 
 }

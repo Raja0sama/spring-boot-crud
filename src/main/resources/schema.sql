@@ -9,7 +9,7 @@ CREATE TABLE CARS (
 DROP TABLE IF EXISTS features;
 CREATE TABLE features (
                                id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                               car_id INTEGER NOT NULL,
+                               car_id INTEGER,
                                name VARCHAR(255) NOT NULL,
                                price VARCHAR(255) NOT NULL,
                                FOREIGN KEY (car_id) REFERENCES cars(id)
@@ -17,7 +17,7 @@ CREATE TABLE features (
 DROP TABLE IF EXISTS exterior_colors;
 CREATE TABLE exterior_colors (
                                       id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                                      car_id INTEGER NOT NULL,
+                                      car_id INTEGER,
                                       name VARCHAR(255) NOT NULL,
                                       price VARCHAR(255) NOT NULL,
                                       FOREIGN KEY (car_id) REFERENCES cars(id)
@@ -25,7 +25,7 @@ CREATE TABLE exterior_colors (
 DROP TABLE IF EXISTS interior_options;
 CREATE TABLE interior_options (
                                        id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                                       car_id INTEGER NOT NULL,
+                                       car_id INTEGER,
                                        name VARCHAR(255) NOT NULL,
                                        price VARCHAR(255) NOT NULL,
                                        FOREIGN KEY (car_id) REFERENCES cars(id)
@@ -33,7 +33,7 @@ CREATE TABLE interior_options (
 DROP TABLE IF EXISTS autopilot_options;
 CREATE TABLE autopilot_options (
                                         id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                                        car_id INTEGER NOT NULL,
+                                        car_id INTEGER,
                                         name VARCHAR(255) NOT NULL,
                                         price VARCHAR(255) NOT NULL,
                                         FOREIGN KEY (car_id) REFERENCES cars(id)
