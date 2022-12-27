@@ -5,8 +5,6 @@ import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Data
@@ -22,8 +20,6 @@ public class Feature extends Option {
     @ManyToOne
     @Nullable
     @JsonBackReference
-    @OnDelete(action = OnDeleteAction.CASCADE)
-
     private Car car;
 
 }

@@ -2,14 +2,13 @@ package com.example.demo.controller;
 
 
 import com.example.demo.model.*;
-import com.example.demo.repository.*;
 import com.example.demo.service.CarService;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.models.annotations.OpenAPI31;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
