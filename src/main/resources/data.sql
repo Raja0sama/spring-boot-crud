@@ -1,8 +1,8 @@
 INSERT INTO cars (model, base_price, image_link)
-VALUES ('Model 3', '184,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W41B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058'),
-       ('Model Y', '219,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTY13,$PPSB,$WY19B,$INPB0&view=FRONT34&model=my&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058'),
-       ('Model S', '467,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTS14,$PBSB,$WS90,$IWC00&view=FRONT34&model=ms&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058'),
-       ('Model X', '477,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MTX14,$PPSW,$WX00,$IBC00&view=FRONT34&model=mx&size=1920&bkba_opt=2&crop=0,0,0,0&version=v0121-078c13b0d202212151058');
+VALUES ('Model 3', '184,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&crop=1300,500,300,300&version=v0121-459f1b30d202212210637'),
+       ('Model Y', '219,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PMNG,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&crop=1300,500,300,300&version=v0121-459f1b30d202212210637'),
+       ('Model S', '467,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPSB,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&crop=1300,500,300,300&version=v0121-459f1b30d202212210637'),
+       ('Model X', '477,000', 'https://static-assets.tesla.com/configurator/compositor?context=design_studio_2&options=$MT322,$PPMR,$W40B,$IBB1&view=STUD_FRONT34&model=m3&size=1920&bkba_opt=1&crop=1300,500,300,300&version=v0121-459f1b30d202212210637');
 
 INSERT INTO features (car_id, name, price)
 SELECT id, 'Performance', '235,000'

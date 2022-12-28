@@ -18,6 +18,7 @@ public class CarController {
     private CarService carService;
 
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:8081")
     public List<Car> getAllCars() {
         return carService.getAllCars();
     }
