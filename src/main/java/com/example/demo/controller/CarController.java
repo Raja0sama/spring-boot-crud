@@ -4,9 +4,9 @@ package com.example.demo.controller;
 import com.example.demo.model.*;
 import com.example.demo.service.CarService;
 
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.models.annotations.OpenAPI31;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,10 +27,15 @@ public class CarController {
     public Car createCar(@RequestBody Car car) {
         return carService.createCar(car);
     }
-
     @GetMapping("/{id}")
-    public Car getCarById(@PathVariable Long id) {
-        return carService.getCarById(id);
+    public ResponseEntity<ResponseClass> getCarById(@PathVariable Long id) {
+        Car car = carService.getCarById(id);
+        if (car == null) {
+            ResponseClass response = new ResponseClass(car,HttpStatus.NOT_FOUND.toString(),"No Car found with the ID" );
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+        ResponseClass response = new ResponseClass(car,HttpStatus.OK.toString(),null );
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
@@ -39,8 +44,16 @@ public class CarController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCar(@PathVariable Long id) {
+    public ResponseEntity<ResponseClass> deleteCar(@PathVariable Long id) {
+        Car car = carService.getCarById(id);
+        if (car == null) {
+            ResponseClass response = new ResponseClass(car,HttpStatus.NOT_FOUND.toString(),"No Car found with the ID" );
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
         carService.deleteCar(id);
+        ResponseClass response = new ResponseClass(car,HttpStatus.OK.toString(),null );
+        return new ResponseEntity<>(response, HttpStatus.OK);
+
     }
 }
 
